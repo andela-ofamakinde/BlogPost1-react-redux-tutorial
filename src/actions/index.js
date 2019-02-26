@@ -1,4 +1,3 @@
-//Action creator
 import jsonPlaceholder from '../apis/jsonplaceholder';
 
 export const selectSong = song => {
@@ -8,10 +7,13 @@ export const selectSong = song => {
   };
 };
 
-export const fetchPosts = async () => {
-  const response = await jsonPlaceholder.get('/post');
-  return {
-    type: 'FETCH_POST',
-    payload: response
-  };
+export const fetchArtists = () => {
+  return async function(dispatch, getState) {
+    const response =  await jsonPlaceholder.get('/users');
+    
+    dispatch({
+      type: 'FETCH_ARTIST',
+      payload: response
+    });
+  }
 };

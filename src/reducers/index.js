@@ -16,7 +16,15 @@ const selectedSongReducer = (selectedSong=null, action) => {
   return selectedSong;
 };
 
+const artistsReducer = (artists=null, action) => {
+  if(action.type === "FETCH_ARTIST") {
+    return action.payload;
+  }
+  return artists;
+};
+
 export default combineReducers({
   songs: songReducer,
-  selectedSong: selectedSongReducer
+  selectedSong: selectedSongReducer,
+  artists: artistsReducer
 });
