@@ -13,9 +13,9 @@ class Artist extends Component {
         <div>No artists</div>
       )
     }
-    return this.props.artists.data.map((artist) => {
+    return this.props.artists.map((artist) => {
       return (
-        <div key={artist.name}>{artist.name}</div>
+        <div key={artist.id}>{artist.name}</div>
       )
     })
   }

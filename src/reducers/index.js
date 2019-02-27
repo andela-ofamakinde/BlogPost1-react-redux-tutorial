@@ -16,7 +16,7 @@ const selectedSongReducer = (selectedSong=null, action) => {
   return selectedSong;
 };
 
-const artistsReducer = (artists=null, action) => {
+const artistsReducer = (artists=[], action) => {
   if(action.type === "FETCH_ARTIST") {
     return action.payload;
   }

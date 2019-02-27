@@ -13,7 +13,7 @@ export const fetchArtists = () => {
     
     dispatch({
       type: 'FETCH_ARTIST',
-      payload: response
+      payload: response.data
     });
   }
 };
