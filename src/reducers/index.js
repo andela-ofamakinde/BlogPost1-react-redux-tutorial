@@ -17,14 +17,30 @@ const selectedSongReducer = (selectedSong=null, action) => {
 };
 
 const artistsReducer = (artists=[], action) => {
-  if(action.type === "FETCH_ARTIST") {
+  if(action.type === "FETCH_ARTISTS") {
     return action.payload;
   }
   return artists;
 };
 
+const postsReducer = (posts=[], action) => {
+  if(action.type === "FETCH_POSTS") {
+    return action.payload;
+  }
+  return posts;
+};
+
+const userReducer = (user=[], action) => {
+  if(action.type === "FETCH_USER") {
+    return [...user, action.payload];
+  }
+  return user;
+};
+
 export default combineReducers({
   songs: songReducer,
   selectedSong: selectedSongReducer,
-  artists: artistsReducer
+  artists: artistsReducer,
+  posts: postsReducer,
+  users: userReducer
 });

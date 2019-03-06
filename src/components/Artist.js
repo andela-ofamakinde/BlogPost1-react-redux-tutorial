@@ -26,7 +26,7 @@ class Artist extends Component {
   }
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return { artists: state.artists }
 }
 
